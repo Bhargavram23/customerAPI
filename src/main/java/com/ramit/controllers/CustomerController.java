@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ramit.models.Customer;
 import com.ramit.repository.CustomerRepository;
 import com.ramit.service.CustomerService;
-import com.ramit.utils.EmailUtils;
-
-import jakarta.mail.MessagingException;
 @CrossOrigin("http://localhost:4200")
 @RestController
 public class CustomerController {
@@ -28,7 +25,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/customer")
-	public Customer upserCustomerByExample(@RequestBody Customer customer) {
+	public Customer upsertCustomerByExample(@RequestBody Customer customer) {
 		Customer customerInDB = customerService.upsertCustomerInDB(customer);
 
 		return customerInDB;

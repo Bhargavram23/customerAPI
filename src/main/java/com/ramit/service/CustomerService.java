@@ -49,7 +49,7 @@ public class CustomerService {
 		customerInDB.setAddress(upsertAddressByExample);
 		return customerInDB;
 	}
-	public Customer login(Customer customer) {
+ 	public Customer login(Customer customer) {
 		customer.setVerified(true);
 		 List<Customer> customerList = customerRepo.findAll(Example.of(customer));
 		 if(!customerList.isEmpty()) {
